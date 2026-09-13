@@ -1,0 +1,25 @@
+name: tests
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # asyncio.timeout arrived in 3.11, so that is the floor.
+        python: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install test tools
+        run: pip install -r requirements-dev.txt
+      # No Docker step: the suite runs its own backends on real sockets. The
+      # nginx comparison is a benchmark, not a test, and stays a manual run.
+      - name: Test
+        run: python -m pytest -q
