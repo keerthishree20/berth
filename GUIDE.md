@@ -5,6 +5,7 @@ design decision and the reason behind it, with the real code. It is self-contain
 into any AI chat and ask questions about the project without sharing the repository.
 
 **Repository:** https://github.com/keerthishree20/berth
+**All projects:** https://github.com/keerthishree20
 
 ---
 
