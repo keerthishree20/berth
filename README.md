@@ -1,5 +1,7 @@
 # Berth
 
+[![tests](https://github.com/keerthishree20/berth/actions/workflows/ci.yml/badge.svg)](https://github.com/keerthishree20/berth/actions/workflows/ci.yml)
+
 An HTTP reverse proxy and load balancer on asyncio. Health checks, consistent
 hashing for sticky routing, connection pooling, and a circuit breaker per
 backend. No dependencies outside the standard library.
